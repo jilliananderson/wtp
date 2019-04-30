@@ -35,7 +35,7 @@ const List = () => {
         <input type="text" name="todoInput" value={value} onChange={onChange}></input>
         <button type="submit" onClick={onClick}>Add</button>
       </form>
-      <ul>{formattedList}</ul>
+      <ul className="list">{formattedList}</ul>
       <button type="button" onClick={clearList}>Clear List</button>
     </div>
   );
