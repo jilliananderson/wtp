@@ -14,19 +14,6 @@
   padding: 0;
 }
 
-.list-container {
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 10vh;
-}
-
-.list {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .calendar {
   width: 70%;
   height: 40%;
@@ -36,4 +23,8 @@
   background-color: lavender;
   border-radius: 5px;
   height: 30px;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr[title] {
+  text-decoration: none;
 }

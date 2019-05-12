@@ -1,4 +1,22 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const ListItem = styled.li`
+  text-align: left;
+`
+
+const Wrapper = styled.div`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
+
+const StyledListContainer = styled.div`
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 10vh;
+`
 
 const List = () => {
   const [listItems, amendList] = useState([]);
@@ -21,7 +39,7 @@ const List = () => {
   const formatList = arr => {
     return arr.map(item => {
       return (
-        <li key={item}>{item}</li>
+        <ListItem key={item}>{item}</ListItem>
       );
     })
   }
@@ -29,15 +47,15 @@ const List = () => {
   const formattedList = formatList(listItems)
 
   return (
-    <div className="list-container">
+    <StyledListContainer>
       <h2>Add items to your to-do list below.</h2>
-      <form className="list" onSubmit={onClick}>
+      <Wrapper as="form" onSubmit={onClick}>
         <input type="text" name="todoInput" value={value} onChange={onChange}></input>
         <button type="submit" onClick={onClick}>Add</button>
-      </form>
-      <ul className="list">{formattedList}</ul>
+      </Wrapper>
+      <Wrapper as="ul">{formattedList}</Wrapper>
       <button type="button" onClick={clearList}>Clear List</button>
-    </div>
+    </StyledListContainer>
   );
   
 }
