@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
-import ReactCalendar from 'react-calendar/dist/entry.nostyle';
+import React from 'react';
 
 const Calendar = () => {
-  const [date, setDate] = useState(new Date());
-
-  const onChange = date => {
-    setDate(date);
-  }
 
   return (
-    <ReactCalendar
-      className="calendar"
-      onChange={onChange}
-      value={date}
-    />
+    <div>
+      <span>Date picker will go here once I decide between react-dates and react-day-picker...</span>
+    </div>
   );
 }
 
 export default Calendar;
+
+
