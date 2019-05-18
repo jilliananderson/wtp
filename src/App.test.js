@@ -1,9 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
+import List from './components/List';
+import Calendar from './components/Calendar';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App tests', () => {
+  let wrapper; 
+  beforeEach(() => wrapper = shallow(<App />));
+  
+  it('renders without crashing', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+
+  it('renders a List component', () => {
+    expect(wrapper.containsMatchingElement(<List />)).toEqual(true);
+  });
+
+  it('renders a Calendar component', () => {
+    expect(wrapper.containsMatchingElement(<Calendar />)).toEqual(true);
+  });
 });
