@@ -29,6 +29,11 @@ const ListItem = styled.li`
   padding: 10px;
   transition: all 0.3s ease-in;
   cursor: pointer;
+  color: rgba(246, 192, 229, 0.8);
+  font-weight: bold;
+  &:hover {
+    background-color: white;
+  }
 `
 
 const TopNav = props => {
